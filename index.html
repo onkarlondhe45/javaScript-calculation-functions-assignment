@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculation Assignment</title>
+</head>
+<body style="background-color: pink">
+	 
+	<h2>JavaScript Calculation Functions Assignment</h2>
+	<hr>
+	<hr>
+	<br>
+	
+	 <h3>Addition</h3> 
+	
+	<label for="num1">Number 1: </label>
+	<input type="number" name="num1" id="num1"/> +
+	
+	<label for="num2">Number 2: </label>
+	<input type="number" name="num2" id="num2"/>
+	
+	<button type="submit" onclick="addition()">Result</button>
+	<h4 id="addresult"></h4>
+	
+	<hr>
+	
+	 <h3>Subtraction</h3> 
+	 
+	 <label for="num3">Number 1: </label>
+	 <input type="number" name="num3"id="num3"/> -
+	 
+	 <label for="num4">Number 2:</label>
+	 <input type="number" name="num4"id="num4"/>
+	 
+	 <button type="submit" onclick="subtraction()">Result</button>
+	<h4 id="subresult"></h4>
+	 
+	 
+	<hr>
+	
+	<h3>Multiplication</h3> 
+	 
+	<label for="num5">Number 1: </label>
+	<input type="number" name="num5" id="num5"/> * 
+	
+	<label for="num6">Number 2: </label>
+	<input type="number" name="num6" id="num6"/>
+	
+	<button type="submit" onclick="multiplication()">Result</button>
+	<h4 id="mulresult"></h4>
+	
+	
+	<hr>
+	
+	<h3>Division</h3> 
+	 
+	<label for="num7">Number 1:</label>
+	<input type="number" id="num7"/> /
+	
+	<label for="num8">Number 2:</label>
+	<input type="number" id="num8"/>
+	
+	<button type="submit" onclick="division()">Result</button>
+	<h4 id="divresult"></h4>
+	 
+	<hr>
+	
+	<h3>Sum of Array</h3> 
+	
+	<label for="num">Enter Numbers: </label>
+	<input type="text" id="num" />
+	
+	<button type="submit" onclick="sumOfArray()">Result</button>
+	<h4 id="sumofarray"></h4>
+	
+	<hr>
+	
+	<h3>Parsed Value</h3> 
+	
+	<label for="parse">Enter Number: </label>
+	<input type="number" id="parse" />
+	
+	<button type="submit" onclick="parseValue()">Result</button>
+	<h4 id="parseValue"></h4>
+	
+	<hr>
+	
+	<h3>Tax Calculator</h3> 
+	 
+	 <label for="input">Input Amount: </label>
+	 <input type="number" id="input"/>
+	 
+	 <label for="tax">Tax </label>
+	 <input type="number" id="tax"/>
+	 
+	 <button type="submit" onclick="taxCalculator()">Result</button>
+	 <h4 id="taxcalculator"></h4>
+	 
+	
+	<hr>
+	
+	<h3>Interest Calculator</h3> 
+	
+	<label for="principle">Enter Principle Value:</label>
+	<input type="number" id="principle">	
+	
+	<label for="period">Period:</label>
+	<input type="number" id="period"/>
+	
+	<label for="roi">Rate of Interest :</label>
+	<input type="number" id="roi"/>
+	
+	<select id="on" name="on">
+		<option>select</option>
+		<option value="day">Day</option>
+		<option value="week">Week</option>
+		<option value="month">Month</option>
+		<option value="quarter">Quarter</option>
+		<option value="halfYear">Half-Year</option>
+		<option value="year">Year</option>
+	</select>
+	
+	<button type="submit" onclick="interestCalculator()">Result</button>
+	<h4 id="taxCal"></h4>
+	
+	<hr>
+	
+	<h3>Vertical Sum of Array</h3> 
+	<button type="submit" onclick="verticalSumOfArray()">Result</button>
+	<h4 id="array"></h4>
+	
+	
+	<hr>
+	
+	<h3>Random Number Generator</h3> 
+	<label for="random">Enter Number: </label>
+	<input type="number" id="random"/>
+	
+	<button type="submit" onclick="randomNumberGenerator()">Result</button>
+	<h4 id="randomnumber"></h4>
+	
+	
+	 
+	<script src="calculations.js"></script>	
+</body>
+</html>
