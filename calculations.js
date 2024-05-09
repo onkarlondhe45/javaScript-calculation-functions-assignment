@@ -88,28 +88,28 @@ function interestCalculator(){
 	
 	
 	if(roiOn=="day"){
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;
 	}else if(roiOn=="week"){
 		period = period/(7*52);
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;	
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="month"){
 		period = period/(30*12);
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;	
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="quarter"){
 		period = period/(90*4);
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;	
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="halfYear"){
 		period = period/(180*2);
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;	
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="year"){
 		period = period/365;
-		let peri = (principle*period*rateOfInterest)/100;
-		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${peri} and Total Amount is ${peri+principle}`;	
+		let interest = (principle*period*rateOfInterest)/100;
+		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}
 
 }
@@ -139,11 +139,39 @@ function randomNumberGenerator(){
 	let random = parseInt(document.getElementById("random").value);
 	
 	if(random==2){
-		let x = Math.floor((Math.random() * 10) + 10);
+		let x = Math.floor((Math.random() * 88) + 10);
 		document.getElementById("randomnumber").innerHTML = x;
 	}else if(random==3){
-		let x = Math.floor((Math.random() * 100) + 10);
-		
+		let x = Math.floor((Math.random() * 100) + 100);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==4){
+		let x = Math.floor((Math.random() * 1000) + 1000);
 		document.getElementById("randomnumber").innerHTML = x;
 	}
+}
+
+// Formula : 
+// A = p(1+r/n)^nt
+
+// A = amount
+// p = principle
+// r = rate of interest
+// n = number of times interest is compounded per year.
+// t = time
+function compoundInterestCalculation(){
+	
+	let principle = parseInt(document.getElementById("compound").value);
+	let period = parseInt(document.getElementById("period1").value);
+	let rateOfInterest = parseFloat(document.getElementById("roi1").value);
+	let numberOfTimes = parseInt(document.getElementById("nooftimes").value);
+	
+	let amount = principle*(1+(rateOfInterest/numberOfTimes))**(numberOfTimes*period);
+	
+	console.log(amount);
+	
+	let totalInterest = (((amount**(1/numberOfTimes*period) - principle))**numberOfTimes)/principle;
+	console.log(totalInterest);
+	
+	document.getElementById("cic").innerHTML= `Amount is ${amount} and Total Interest is ${totalInterest}`;
+	
 }
