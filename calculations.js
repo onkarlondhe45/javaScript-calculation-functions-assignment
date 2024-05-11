@@ -91,23 +91,23 @@ function interestCalculator(){
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;
 	}else if(roiOn=="week"){
-		period = period/(7*52);
+		period = period/(52);
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="month"){
-		period = period/(30*12);
+		period = period/(12);
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="quarter"){
-		period = period/(90*4);
+		period = period/(4);
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="halfYear"){
-		period = period/(180*2);
+		period = period/(2);
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}else if(roiOn=="year"){
-		period = period/365;
+		period = period;
 		let interest = (principle*period*rateOfInterest)/100;
 		document.getElementById("taxCal").innerHTML = `Interest Of Amount is ${interest} and Total Amount is ${interest+principle}`;	
 	}
@@ -160,18 +160,28 @@ function randomNumberGenerator(){
 // t = time
 function compoundInterestCalculation(){
 	
-	let principle = parseInt(document.getElementById("compound").value);
-	let period = parseInt(document.getElementById("period1").value);
-	let rateOfInterest = parseFloat(document.getElementById("roi1").value);
-	let numberOfTimes = parseInt(document.getElementById("nooftimes").value);
+	let principal = parseInt(document.getElementById("compound").value);
+	let time = parseInt(document.getElementById("period1").value);
+	let rate = parseFloat(document.getElementById("roi1").value);
+	let n = parseInt(document.getElementById("nooftimes").value);
 	
-	let amount = principle*(1+(rateOfInterest/numberOfTimes))**(numberOfTimes*period);
+ 
+	let amount = principal * Math.pow((1 + (rate / n)), (n * time));
+	let interest = amount - principal;
+
+ 	
+	document.getElementById("cic").innerHTML= `Interest is ${interest}`;
 	
-	console.log(amount);
 	
-	let totalInterest = (((amount**(1/numberOfTimes*period) - principle))**numberOfTimes)/principle;
-	console.log(totalInterest);
+	// period = period/12;
+	// let amount = principle*(1+(rateOfInterest/numberOfTimes))**(numberOfTimes*period);
 	
-	document.getElementById("cic").innerHTML= `Amount is ${amount} and Total Interest is ${totalInterest}`;
+	// console.log(amount);
+	
+	// let totalInterest = (((amount**(1/numberOfTimes*period) - principle))**numberOfTimes)/principle;
+	// console.log(totalInterest);
+	
+	// document.getElementById("cic").innerHTML= `Amount is ${amount} and Total Interest is ${totalInterest}`;
 	
 }
+
