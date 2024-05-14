@@ -138,7 +138,10 @@ function verticalSumOfArray(){
 function randomNumberGenerator(){
 	let random = parseInt(document.getElementById("random").value);
 	
-	if(random==2){
+	if(random==1){
+		let x = Math.floor((Math.random() * 9));
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==2){
 		let x = Math.floor((Math.random() * 88) + 10);
 		document.getElementById("randomnumber").innerHTML = x;
 	}else if(random==3){
@@ -146,6 +149,21 @@ function randomNumberGenerator(){
 		document.getElementById("randomnumber").innerHTML = x;
 	}else if(random==4){
 		let x = Math.floor((Math.random() * 1000) + 1000);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==5){
+		let x = Math.floor((Math.random() * 10000) + 10000);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==6){
+		let x = Math.floor((Math.random() * 100000) + 100000);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==7){
+		let x = Math.floor((Math.random() * 1000000) + 1000000);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==8){
+		let x = Math.floor((Math.random() * 10000000) + 10000000);
+		document.getElementById("randomnumber").innerHTML = x;
+	}else if(random==9){
+		let x = Math.floor((Math.random() * 100000000) + 100000000);
 		document.getElementById("randomnumber").innerHTML = x;
 	}
 }
